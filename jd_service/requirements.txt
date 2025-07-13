@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+aiofiles
+sqlalchemy
+psycopg2-binary
+pydantic
+kafka-python
+python-multipart
+pdfminer.six
+python-docx
