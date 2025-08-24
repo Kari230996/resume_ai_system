@@ -1,23 +1,20 @@
-
----
-
 ## 📄 Resume AI System
 
-Сервис обработки резюме для HR-специалистов с использованием микросервисной архитектуры, Kafka и FastAPI. Пользователь загружает резюме и получает автоматические рекомендации на основе анализа текста.
+A resume processing service for HR specialists using microservices architecture, Kafka, and FastAPI. Users upload resumes and receive automatic recommendations based on text analysis.
 
 ---
 
-### 🧠 Функциональность
+### 🧠 Features
 
-* 📤 Загрузка резюме через API (`resume_service`)
-* 📦 Передача данных в Kafka-топик `resumes`
-* 🤖 Обработка и анализ резюме (`match_service`)
-* 📊 Подготовка рекомендаций на основе ключевых навыков
-* 🛠 Расширяемая архитектура под AI-агентов
+* 📤 Resume upload via API (`resume_service`)
+* 📦 Data publishing to Kafka topic `resumes`
+* 🤖 Resume processing and analysis (`match_service`)
+* 📊 Recommendation generation based on key skills
+* 🛠 Extensible architecture for AI agents
 
 ---
 
-### ⚙️ Технологии
+### ⚙️ Technologies
 
 * Python 3.10
 * FastAPI
@@ -28,29 +25,29 @@
 
 ---
 
-### 🏗 Структура микросервисов
+### 🏗 Microservice Structure
 
 ```
 resume_ai_system/
 │
-├── resume_service/      # Загрузка резюме
-├── match_service/       # Обработка и анализ
-├── jd_service/          # (Заглушка) обработка job description
-├── docker-compose.yml   # Запуск всей системы
+├── resume_service/      # Resume upload
+├── match_service/       # Processing and analysis
+├── jd_service/          # (Stub) Job description processing
+├── docker-compose.yml   # Run the whole system
 ```
 
 ---
 
-### 🚀 Запуск проекта
+### 🚀 Running the Project
 
-1. **Клонировать репозиторий**
+1. **Clone the repository**
 
    ```bash
    git clone https://github.com/Kari230996/resume_ai_system.git
    cd resume_ai_system
    ```
 
-2. **Создать `.env` для PostgreSQL**
+2. **Create `.env` for PostgreSQL**
 
    ```env
    POSTGRES_USER=postgres
@@ -58,7 +55,7 @@ resume_ai_system/
    POSTGRES_DB=resume_db
    ```
 
-3. **Собрать и запустить**
+3. **Build and start services**
 
    ```bash
    docker-compose up --build
@@ -66,9 +63,9 @@ resume_ai_system/
 
 ---
 
-### 🧪 Примеры запросов
+### 🧪 API Request Examples
 
-#### 📤 Загрузка резюме
+#### 📤 Upload a Resume
 
 ```bash
 curl -X POST http://localhost:8001/upload-resume/ \
@@ -78,15 +75,15 @@ curl -X POST http://localhost:8001/upload-resume/ \
 
 ---
 
-### 🔄 Kafka-поток
+### 🔄 Kafka Flow
 
-1. `resume_service` публикует данные в Kafka (`resumes`)
-2. `match_service` подписан и обрабатывает входящие резюме
-3. В консоли выводится результат анализа
+1. `resume_service` publishes data to Kafka (`resumes`)
+2. `match_service` consumes and processes incoming resumes
+3. Results are displayed in the console
 
 ---
 
-### 🗃 Пример вывода
+### 🗃 Example Output
 
 ```
 🚀 match_service started!
@@ -100,19 +97,17 @@ ID: d950c24d-9c3f-47c9-9efb-c31f6eda5a5c
 
 ---
 
-### 📌 Возможности для расширения
+### 📌 Extension Possibilities
 
-* Добавление AI-модуля (например, LLM)
-* Подключение job description и сравнение
-* Хранение в PostgreSQL и аналитика
+* Adding AI module (e.g., LLM)
+* Connecting job descriptions for matching
+* Storing in PostgreSQL with analytics
 
 ---
 
-### 📬 Контакты
+### 📬 Contacts
 
-**Карина Апаева**
+**Karina Apaeva**
 Email: [karina.apaeva96@gmail.com](mailto:karina.apaeva96@gmail.com)
 
 ---
-
-
